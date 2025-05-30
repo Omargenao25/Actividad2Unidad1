@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Conversión de Moneda";
+}
+
+<h2>Conversión de Moneda</h2>
+
+<form method="post" asp-controller="Moneda" asp-action="Convertir">
+    <div>
+        <label>Monto en DOP:</label>
+        <input type="number" name="montoDOP" step="0.01" required />
+    </div>
+    <div>
+        <label>Convertir a:</label>
+        <select name="divisa" required>
+            <option value="USD">Dólar (USD)</option>
+            <option value="EUR">Euro (EUR)</option>
+        </select>
+    </div>
+    <button type="submit">Convertir</button>
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <p><strong>Resultado:</strong> @ViewBag.Mensaje</p>
+}
+>
+}
+
+
