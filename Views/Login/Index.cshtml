@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<!-- Index.cshtml -->
+@using (Html.BeginForm("Ingresar", "Login", FormMethod.Post))
+{
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" required />
+
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" name="contrasena" required />
+
+    <button type="submit">Ingresar</button>
+}
+
+@if (ViewBag.Mensaje != null)
+{
+    <p>@ViewBag.Mensaje</p>
+}
+
