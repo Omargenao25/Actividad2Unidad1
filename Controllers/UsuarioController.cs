@@ -11,10 +11,19 @@ namespace Actividad2Unidad1.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult Saludo(string nombre)
         {
-            ViewBag.Mensaje = $"Hola, {nombre}, bienvenido a ASP.NET MVC.";
-            return View();
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                ViewBag.Mensaje = $"Hola, {nombre}, bienvenido a ASP.NET MVC.";
+                return View();
+            }
+            else
+            {
+                // Si el nombre está vacío, redirige al usuario de vuelta a la página de inicio
+                return RedirectToAction("Index");
+            }
         }
 
     }
